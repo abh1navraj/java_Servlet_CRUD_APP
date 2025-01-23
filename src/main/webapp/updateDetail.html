@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Update Detail</title>
+    <script>
+    // Fetch data from the URL and set placeholders on page load
+    window.onload = function () {
+        const urlParams = new URLSearchParams(window.location.search);
+
+        // Extract parameters from the URL
+        const userid = urlParams.get('userid');
+        const username = urlParams.get('username');
+        const userage = urlParams.get('age');
+        const useraddress = urlParams.get('address');
+
+        // Set placeholder values for input fields
+        document.querySelector('input[name="userid"]').value = userid || '';
+        document.querySelector('input[name="name"]').value = username || '';
+        document.querySelector('input[name="age"]').value = userage || '';
+        document.querySelector('input[name="address"]').value = useraddress || '';
+    };
+    
+    // Automatically select text when the input is focused
+    function autoSelectText(event) {
+        event.target.select();
+    }
+</script>
+    <style>
+        /* General Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        html, body {
+            height: 100%;
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f4f4;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        /* Header Style */
+        header {
+            background-color: #4CAF50;
+            color: white;
+            padding: 20px;
+            text-align: center;
+            font-size: 24px;
+            font-weight: bold;
+            width: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+
+        /* Form Container */
+        .form-container {
+            background-color: white;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            width: 400px;
+            text-align: center;
+            z-index: 10;
+        }
+
+        table {
+            width: 100%;
+            margin-bottom: 20px;
+        }
+
+        th {
+            text-align: left;
+            padding: 8px;
+            font-weight: bold;
+            color: #333;
+        }
+
+        td {
+            padding: 8px;
+        }
+
+        input[type="text"] {
+            width: calc(100% - 16px);
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-size: 16px;
+        }
+
+        input[type="submit"] {
+            width: 100%;
+            padding: 12px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 18px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+
+        /* Footer Style */
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <header>
+        INEURON Intelligence Pvt Ltd
+    </header>
+
+    <!-- Form for Update Details -->
+    <div class="form-container">
+        <h2>Update Details</h2>
+        <form action="./controller/updateform" method="post">
+            <table>
+                <tr>
+                    <th>ID</th>
+                    <td>
+                        <input type="text" name="userid" readonly>
+                    </td>
+                </tr>
+                <tr>
+                    <th>Name</th>
+                    <td>
+                        <input type="text" name="name" onfocus="autoSelectText(event)">
+                    </td>
+                </tr>
+                <tr>
+                    <th>Age</th>
+                    <td>
+                        <input type="text" name="age" onfocus="autoSelectText(event)">
+                    </td>
+                </tr>
+                <tr>
+                    <th>Address</th>
+                    <td>
+                        <input type="text" name="address" onfocus="autoSelectText(event)">
+                    </td>
+                </tr>
+                <tr>
+                    <th></th>
+                    <td>
+                        <input type="submit" value="Update">
+                    </td>
+                </tr>
+            </table>
+        </form>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p>This is a sample Servlet project with an MVC design pattern</p>
+    </footer>
+
+</body>
+</html>

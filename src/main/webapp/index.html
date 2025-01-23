@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <style>
+        /* General Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html, body {
+            height: 100%;
+            font-family: 'Arial', sans-serif;
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* Header Style */
+        header {
+            background-color: #4CAF50;
+            color: white;
+            padding: 25px 50px;
+            text-align: center;
+            font-size: 28px;
+            font-weight: bold;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Main Section */
+        main {
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            padding: 30px;
+            min-height: 80vh;
+            flex-grow: 1; /* Ensures the main content takes the remaining space */
+            width: 100%;
+        }
+
+        /* Container for both sections */
+        .content-container {
+            display: flex;
+            justify-content: space-between;
+            width: 100%;
+            max-width: 1200px; /* Maximum width for large screens */
+            gap: 30px;
+        }
+
+        /* Left Column (Buttons) */
+        .left-column {
+            width: 30%;
+            background-color: #f9f9f9;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            padding: 25px;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+        }
+
+        .left-column button {
+            background-color: #4CAF50;
+            border: none;
+            color: white;
+            padding: 15px 25px;
+            font-size: 18px;
+            cursor: pointer;
+            border-radius: 8px;
+            margin: 15px 0;
+            width: 100%;
+            text-align: center;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+
+        .left-column button:hover {
+            background-color: #45a049;
+            transform: scale(1.05);
+        }
+
+        .left-column a {
+            text-decoration: none;
+            color: white;
+        }
+
+        /* Right Column (Welcome Text) */
+        .right-column {
+            width: 65%;
+            background-color: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            padding: 25px;
+        }
+
+        .right-column h1 {
+            font-size: 40px;
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        .right-column p {
+            font-size: 20px;
+            color: #555;
+            line-height: 1;
+        }
+
+        .techlist{
+            margin: 10px;
+        }
+
+        .right-column p ul{
+            
+            font-size: 20px;
+            color: #555;
+            line-height: 3;
+        }
+
+        /* Footer Style */
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 15px 0;
+            width: 100%;
+            font-size: 14px;
+            position: relative;
+            bottom: 0;
+        }
+
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <header>
+        INEURON Intelligence Pvt Ltd
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        <div class="content-container">
+            <!-- Left Column (Buttons) -->
+            <div class="left-column">
+                <button><a href="./insert.html">CREATE</a></button>
+                <button><a href="./read.html">SEARCH</a></button>
+                <button><a href="./update.html">UPDATE</a></button>
+                <button><a href="./delete.html">DELETE</a></button>
+            </div>
+
+            <!-- Right Column (Welcome Text) -->
+            <div class="right-column">
+                <marquee behavior="scroll" direction="Left"><h1>Welcome to INEURON Intelligence Pvt Ltd</h1></marquee>
+                <p>This is a Web Application to perform CRUD operation on mysql data base using JDBC Which is designed using MVC pattern.</p>
+                <br>
+                <p><strong>Tools and Technologies used:</strong></p>
+                
+                <p>
+                    <div class="techlist">
+                    <ul>
+                        <li><b>Backend Programming Language: </b>Java</li>
+                        <li><b>Database Connectivity: </b>JDBC</li>
+                        <li><b>Controller: </b>Servelt</li>
+                        <li><b>Front End: </b>HTML, CSS, Javascript</li>
+                        <li><b>Server: </b>Tomcat</li>
+                    </ul>
+                </div>
+                </p>
+
+
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <p>This is a sample Servlet project with an MVC design pattern</p>
+    </footer>
+
+</body>
+</html>
